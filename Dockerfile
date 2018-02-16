@@ -8,12 +8,11 @@ RUN apt-get install nodejs git-core avahi-daemon avahi-discover libnss-mdns liba
 RUN apt-get install vim emacs
 RUN npm install forever -g
 RUN git clone https://github.com/noelportugal/google-home-notifier /google-home-notifier
-RUN npm install --prefix=/google-home-notifier
-RUN sed -e "s/192.168.1.20/192.168.1.4/g" -e "s/'pl'/'ja'/g" /node_modules/google-home-notifier/example.js~ > /node_modules/google-home-notifier/app.js
-RUN sed -i -e "s#ExecStart=/usr/sbin/avahi-daemon #ExecStart=/usr/sbin/avahi-daemon --no-drop-root #g" /etc/systemd/system/dbus-org.freedesktop.Avahi.service 
-RUN sed -i -e "s/rst.getaddrinfo()/rst.getaddrinfo({families:[4]})/1" /node_modules/mdns/lib/browser.js 
-RUN /etc/init.d/dbus start
-RUN /usr/sbin/avahi-daemon --no-drop-root &
+RUN npm install -cwd /google-home-notifier
+
+ADD replace.sh /
+
+RUN /replace.sh
 
 ADD start.sh /
 
