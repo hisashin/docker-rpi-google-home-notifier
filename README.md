@@ -8,6 +8,7 @@ Copyright (c) 2017 noelportugal
 * Run This Image
 * Customize script
 * Restart
+* Enjoy
 
 # Run Docker on Raspberry Pi
 
@@ -49,4 +50,8 @@ To autostart, add same line to /etc/rc.local
 
     docker start rpi-google-home-notifier
 
+# Enjoy
 
+Let your Google Home speak like this. Default port is 8091 but you can change it by editing /google-home-notifier/app.js.
+
+    curl -X GET http://(IP of RaspberPi):8091/google-home-notifier?text=Hello+Google+Home
