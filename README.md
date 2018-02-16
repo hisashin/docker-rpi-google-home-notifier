@@ -55,3 +55,5 @@ To autostart, add same line to /etc/rc.local
 Let your Google Home speak like this. Default port is 8091 but you can change it by editing /google-home-notifier/app.js.
 
     curl -X GET http://(IP of RaspberryPi):8091/google-home-notifier?text=Hello+Google+Home
+
+If text starts from 'http' like url of mp3, it will be played.
