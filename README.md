@@ -11,10 +11,10 @@
 # Customize script
 
     vi /google-home-notifier/app.js
- 
-   var ip = '192.168.1.4'; // default IP
-   var language = 'ja'; // default language code (first one in post)
-   var language = 'ja'; // default language code (second one in get)
+
+    var ip = '192.168.1.4'; // default IP
+    var language = 'ja'; // default language code (first one in post)
+    var language = 'ja'; // default language code (second one in get)
 Edit around this section as you want with the your IP address of your Google-Home.
 
 # Restart
