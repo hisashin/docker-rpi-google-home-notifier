@@ -6,7 +6,7 @@
 
 # Run This Image
 
-    docker run -it --net host --name rpi-google-home-notifier hisashin/rpi-google-home-notifier
+    docker run -it --net host -p 8091:8091 --name rpi-google-home-notifier hisashin/rpi-google-home-notifier
 
 # Customize script
 
