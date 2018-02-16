@@ -28,6 +28,7 @@ Simply after sticking micro SD card to your computer, run these commands. You wi
 
 # Customize script
 
+    docker exec -it rpi-google-home-notifier /bin/bash
     vi /google-home-notifier/app.js
 
     var ip = '192.168.1.4'; // default IP
@@ -37,10 +38,14 @@ Edit around this section as you want with the your IP address of your Google-Hom
 
 # Restart
 
-    forever stop /google-home-notifier/app.js
-    /start.sh
+    /etc/init.d/dbus stop
+    pgrep -f start.sh | xargs kill
 
-Ctrl+P, Ctrl+Q to escape. To autostart, add following line to /etc/rc.local
+This stops docker process and you will be forced to exit. Restart it with latest settings you've done.
+
+    docker start rpi-google-home-notifier
+
+To autostart, add same line to /etc/rc.local
 
     docker start rpi-google-home-notifier
 
