@@ -1,5 +1,9 @@
 [Github](https://github.com/hisashin/docker-rpi-google-home-notifier), [DockerHub](https://hub.docker.com/r/hisashin/rpi-google-home-notifier/)
 
+Based on [google-home-notifier](https://github.com/noelportugal/google-home-notifier). Great work!
+The MIT License (MIT)
+Copyright (c) 2017 noelportugal
+
 * Run This Image
 * Customize script
 * Restart
